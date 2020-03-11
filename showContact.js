@@ -1,3 +1,6 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-console */
+const Table = require('cli-table');
 const fs = require('fs');
 const chalk = require('chalk');
 
@@ -11,9 +14,14 @@ const showContact = () => {
   } else {
     const parseData = JSON.parse(loadData);
     // eslint-disable-next-line no-restricted-syntax
+    const table = new Table({
+      head: ['STT', 'Ho va ten', 'So dien thoai'],
+    });
     for (const i of parseData) {
-      console.log(success('\n', parseData.indexOf(i), i.name, ' - ', i.phone));
+      table.push([parseData.indexOf(i), i.name, i.phone]);
     }
+    console.log('\n');
+    console.log(table.toString());
   }
 };
 

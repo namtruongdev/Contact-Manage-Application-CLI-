@@ -10,8 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^3.0.0",
-    "readline-sync": "^1.4.10",
-    "table": "^5.4.6"
+    "cli-table": "^0.3.1",
+    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
