@@ -4,7 +4,7 @@ const chalk = require('chalk');
 const err = chalk.red.bold;
 const success = chalk.green;
 
-function showContact() {
+const showContact = () => {
   const loadData = fs.readFileSync('./data.json', { encoding: 'utf8' });
   if (loadData === '') {
     console.log(err('No contacts exist!'));
@@ -15,6 +15,6 @@ function showContact() {
       console.log(success('\n', parseData.indexOf(i), i.name, ' - ', i.phone));
     }
   }
-}
+};
 
 module.exports = showContact;
